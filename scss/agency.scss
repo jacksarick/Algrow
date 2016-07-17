@@ -87,7 +87,7 @@ h6 {
 
 .navbar-default {
   background-color: $gray-darkest;
-  border-color: transparent;
+  border-color: $gray-darkest;
 
   .navbar-brand {
     color: $brand-primary;
@@ -151,7 +151,7 @@ h6 {
 
 @media(min-width:768px) {
   .navbar-default {
-    background-color: transparent;
+    background-color: $gray-darkest;
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
@@ -270,20 +270,20 @@ section {
   text-transform: none;
 }
 
-// Portfolio Section
+// Examples Section
 
-#portfolio {
-  .portfolio-item {
+#examples {
+  .examples-item {
     margin: 0 0 15px;
     right: 0;
 
-    .portfolio-link {
+    .examples-link {
       display: block;
       position: relative;
       max-width: 400px;
       margin: 0 auto;
 
-      .portfolio-hover {
+      .examples-hover {
         background: fade($brand-primary, 90%);
         position: absolute;
         width: 100%;
@@ -297,7 +297,7 @@ section {
           opacity: 1;
         }
 
-        .portfolio-hover-content {
+        .examples-hover-content {
           position: absolute;
           width: 100%;
           height: 20px;
@@ -319,7 +319,7 @@ section {
       }
     }
 
-    .portfolio-caption {
+    .examples-caption {
       max-width: 400px;
       margin: 0 auto;
       background-color: white;
@@ -346,8 +346,8 @@ section {
 }
 
 @media(min-width:767px) {
-  #portfolio {
-    .portfolio-item {
+  #examples {
+    .examples-item {
       margin: 0 0 30px;
     }
   }
@@ -716,7 +716,7 @@ ul.social-buttons {
   outline: none;
 }
 
-.portfolio-modal {
+.examples-modal {
   .modal-content {
     border-radius: 0;
     background-clip: border-box;

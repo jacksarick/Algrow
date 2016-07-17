@@ -113,7 +113,7 @@ h6 {
 
 .navbar-default {
   background-color: #222;
-  border-color: transparent; }
+  border-color: #222; }
   .navbar-default .navbar-brand {
     color: #029809;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }
@@ -148,7 +148,7 @@ h6 {
 
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: transparent;
+    background-color: #222;
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
@@ -233,15 +233,15 @@ section {
   margin: 15px 0;
   text-transform: none; }
 
-#portfolio .portfolio-item {
+#examples .examples-item {
   margin: 0 0 15px;
   right: 0; }
-  #portfolio .portfolio-item .portfolio-link {
+  #examples .examples-item .examples-link {
     display: block;
     position: relative;
     max-width: 400px;
     margin: 0 auto; }
-    #portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    #examples .examples-item .examples-link .examples-hover {
       background: fade(#029809, 90%);
       position: absolute;
       width: 100%;
@@ -250,9 +250,9 @@ section {
       transition: all ease 0.5s;
       -webkit-transition: all ease 0.5s;
       -moz-transition: all ease 0.5s; }
-      #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+      #examples .examples-item .examples-link .examples-hover:hover {
         opacity: 1; }
-      #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+      #examples .examples-item .examples-link .examples-hover .examples-hover-content {
         position: absolute;
         width: 100%;
         height: 20px;
@@ -261,30 +261,30 @@ section {
         top: 50%;
         margin-top: -12px;
         color: white; }
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+        #examples .examples-item .examples-link .examples-hover .examples-hover-content i {
           margin-top: -12px; }
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+        #examples .examples-item .examples-link .examples-hover .examples-hover-content h3,
+        #examples .examples-item .examples-link .examples-hover .examples-hover-content h4 {
           margin: 0; }
-  #portfolio .portfolio-item .portfolio-caption {
+  #examples .examples-item .examples-caption {
     max-width: 400px;
     margin: 0 auto;
     background-color: white;
     text-align: center;
     padding: 25px; }
-    #portfolio .portfolio-item .portfolio-caption h4 {
+    #examples .examples-item .examples-caption h4 {
       text-transform: none;
       margin: 0; }
-    #portfolio .portfolio-item .portfolio-caption p {
+    #examples .examples-item .examples-caption p {
       font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-style: italic;
       font-size: 16px;
       margin: 0; }
-#portfolio * {
+#examples * {
   z-index: 2; }
 
 @media (min-width: 767px) {
-  #portfolio .portfolio-item {
+  #examples .examples-item {
     margin: 0 0 30px; } }
 .timeline {
   list-style: none;
@@ -516,7 +516,7 @@ ul.social-buttons {
 .btn:focus {
   outline: none; }
 
-.portfolio-modal .modal-content {
+.examples-modal .modal-content {
   border-radius: 0;
   background-clip: border-box;
   -webkit-box-shadow: none;
@@ -525,22 +525,22 @@ ul.social-buttons {
   min-height: 100%;
   padding: 100px 0;
   text-align: center; }
-  .portfolio-modal .modal-content h2 {
+  .examples-modal .modal-content h2 {
     margin-bottom: 15px;
     font-size: 3em; }
-  .portfolio-modal .modal-content p {
+  .examples-modal .modal-content p {
     margin-bottom: 30px; }
-  .portfolio-modal .modal-content p.item-intro {
+  .examples-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
     font-size: 16px; }
-  .portfolio-modal .modal-content ul.list-inline {
+  .examples-modal .modal-content ul.list-inline {
     margin-bottom: 30px;
     margin-top: 0; }
-  .portfolio-modal .modal-content img {
+  .examples-modal .modal-content img {
     margin-bottom: 30px; }
-.portfolio-modal .close-modal {
+.examples-modal .close-modal {
   position: absolute;
   width: 75px;
   height: 75px;
@@ -548,9 +548,9 @@ ul.social-buttons {
   top: 25px;
   right: 25px;
   cursor: pointer; }
-  .portfolio-modal .close-modal:hover {
+  .examples-modal .close-modal:hover {
     opacity: 0.3; }
-  .portfolio-modal .close-modal .lr {
+  .examples-modal .close-modal .lr {
     height: 75px;
     width: 1px;
     margin-left: 35px;
@@ -561,7 +561,7 @@ ul.social-buttons {
     -webkit-transform: rotate(45deg);
     /* Safari and Chrome */
     z-index: 1051; }
-    .portfolio-modal .close-modal .lr .rl {
+    .examples-modal .close-modal .lr .rl {
       height: 75px;
       width: 1px;
       background-color: #222;
@@ -571,7 +571,7 @@ ul.social-buttons {
       -webkit-transform: rotate(90deg);
       /* Safari and Chrome */
       z-index: 1052; }
-.portfolio-modal .modal-backdrop {
+.examples-modal .modal-backdrop {
   opacity: 0;
   display: none; }
 
