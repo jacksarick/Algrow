@@ -31,7 +31,7 @@
 
 			function add_plot() {
 				num += 1;
-				var plot = '<div class="plot" id="plot-' + num + '"><h4 id="name-m">PLOT ' + num + ': </h4><span id="name">' + window.prompt("What is growing in this box?","Vegetables") + '</span><br><h5><span id="temp-m">Temp: </span>0</h5><span id="temp"></span><h5><span id="water-m">Water: </span>0</h5><span id="water"></span><h5><span id="ph-m">pH levels: </span>0</h5><span id="ph"></span></div>';
+				var plot = '<div class="plot" id="plot-' + num + '"><h4 id="name-m">PLOT ' + num + ': </h4><span id="name">' + window.prompt("What is growing in this box?","Vegetables") + '</span><br><h5>Temp: <span id="temp-m">15</span> ℃</h5><span id="temp"></span><h5>Water: <span id="water-m">93</span>%</h5><span id="water"></span><h5>pH levels: <span id="ph-m">7.2</span></h5><span id="ph"></span></div>';
 
 				if (col) {
 					$(".odds").append(plot);
