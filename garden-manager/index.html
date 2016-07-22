@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- <link rel="icon" href="../../favicon.ico"> -->
+
+		<title>Manage Gardens</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap.min.css" rel="stylesheet">
+
+		<!-- Pill CSS -->
+		<link href="pills.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="jumbotron-narrow.css" rel="stylesheet">
+
+		<!-- jQuery -->
+		<script src="jquery.min.js"></script>
+
+		<!-- The brains of the whole op. -->
+		<script type="text/javascript">
+			
+			var col = true;
+			var num = 0;
+
+			function add_plot() {
+				num += 1;
+				var plot = '<div class="plot" id="plot-' + num + '"><h4 id="name-m">PLOT ' + num + ': </h4><span id="name">' + window.prompt("What is growing in this box?","Vegetables") + '</span><br><h5><span id="temp-m">Temp: </span>0</h5><span id="temp"></span><h5><span id="water-m">Water: </span>0</h5><span id="water"></span><h5><span id="ph-m">pH levels: </span>0</h5><span id="ph"></span></div>';
+
+				if (col) {
+					$(".odds").append(plot);
+				}
+
+				else {
+					$(".evens").append(plot);
+				}
+
+				col = !col;
+			}
+		</script>
+
+		<style type="text/css">
+
+			.plot-container {
+				display: flex;
+				flex-flow: column;
+			}
+
+			.plot {
+				border-radius: 10%;
+				background-color: #5CB85C;
+				margin: 5%;
+				flex-grow: 1;
+				padding: 10%;
+			}
+
+			.plot:before {
+				content: "";
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="header clearfix">
+				<nav>
+					<ul class="nav nav-pills pull-right">
+						<li role="presentation" class="active"><a href="#">Home</a></li>
+						<li role="presentation"><a href="http://garden.sarick.tech">Main Page</a></li>
+					</ul>
+				</nav>
+				<h3 class="text-muted">Manage Plots</h3>
+			</div>
+
+			<div class="jumbotron">
+				<h2>Garden Overview</h2>
+				<p class="lead" style="align:left;">
+					<b>Overall Soil Temperature:</b> Warm ☀️ (20 ºC)<br>
+					<b>Average Soil Health:</b> Fair (87%)<br>
+					<div class="row">
+						<div class="column half">
+							<h3>Warnings:</h3>
+						</div>
+						<div class="column half" style="text-align:left">
+							<b>Plot 2:</b> Danger: High Ph ❗<br>
+							<b>Plot 5:</b> Warning: Should water soon ⚠️<br>
+							<b>Plot 3:</b> Alert: 3 ºC too warm<br>
+						</div>
+					</div>
+				</p>
+				<br>
+				<p><a class="btn btn-default btn-success" role="button"><span style="font-size:12pt;" onclick="add_plot()">Add plot</span></a></p>
+			</div>
+
+			<div class="marketing">
+				<div class="row">
+					<div class="column half plot-container odds">
+						
+					</div>
+					<div class="column half plot-container evens">
+						
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="column half plot-container odds">
+						<div class="plot" id="plot-NO">
+							<h4 id="name-m">PLOT NO: </h4><span id="name">Cucumbers and stuff</span><br>
+							<h5 id="temp-m">Temp: </h5><span id="temp"></span>
+							<h5 id="water-m">Water: </h5><span id="water"></span>
+							<h5 id="ph-m">pH levels: </h5><span id="ph"></span>
+						</div>
+						<div class="plot">
+							<b>PLOT 3:</b> Cucumbers and leeks
+						</div>
+						<div class="plot">
+							<b>PLOT 5:</b> Cucumbers
+						</div>
+					</div>
+					<div class="column half plot-container evens">
+						<div class="plot">
+							<b>PLOT 2:</b> Carrots
+						</div>
+						<div class="plot">
+							<b>PLOT 4:</b> Stuff
+						</div>
+					</div>
+				</div> -->
+			</div>
+
+			<footer class="footer">
+				<p>&copy; 2016 GardenSense</p>
+			</footer>
+
+		</div> <!-- /container -->
+	</body>
+</html>
