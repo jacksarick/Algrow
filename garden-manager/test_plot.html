@@ -29,28 +29,34 @@
 		<link href="jumbotron-narrow.css" rel="stylesheet">
 
 		<!-- jQuery -->
-		<script src="jquery.min.js"></script>
+		<script src="./jquery.min.js"></script>
 
 		<!-- The brains of the whole op. -->
 		<script type="text/javascript">
+			var ip = "http://10.23.10.47" + "/temp";
+			// ip = "http://10.23.6.71:3000";
 			
 			var col = true;
 			var num = 0;
 
-			function add_plot() {
-				num += 1;
-				var plot = '<div class="plot" id="plot-' + num + '"><h4 id="name-m">PLOT ' + num + ': </h4><span id="name">' + window.prompt("What is growing in this box?","Vegetables") + '</span><br><h5>Temp: <span id="temp-m">15</span> ℃</h5><span id="temp"></span><h5>Water: <span id="water-m">93</span>%</h5><span id="water"></span><h5>pH levels: <span id="ph-m">7.2</span></h5><span id="ph"></span></div>';
+			// Get temp from Callum
+			function update() {
+				$.get(ip, {}, function(data) {
+					json = JSON.parse(data);
+					console.log(json.temp);
+					$("#temp-m-1").text(json.temp1);
+					$("#temp-m-2").text(json.temp2);
+					$("#avg-soil").text(Math.floor((json.temp1+json.temp2)/2));
 
-				if (col) {
-					$(".odds").append(plot);
-				}
-
-				else {
-					$(".evens").append(plot);
-				}
-
-				col = !col;
+				});
 			}
+
+			
+			update();
+
+			setInterval(function() {
+				update();
+			}, 300);
 		</script>
 
 		<style type="text/css">
@@ -83,18 +89,6 @@
 					<ul class="nav nav-pills pull-right">
 						<!-- <li role="presentation" class="active"><a href="#">Home</a></li> -->
 						<li role="presentation"><a href="http://garden.sarick.tech">Main Page</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
 					</ul>
 				</nav>
 				<h3 class="text-muted">Manage Plots</h3>
@@ -103,16 +97,14 @@
 			<div class="jumbotron">
 				<h2>Garden Overview</h2>
 				<p class="lead" style="align:left;">
-					<b>Overall Soil Temperature:</b> Warm ☀️ (20 ºC)<br>
+					<b>Average Soil Temperature:</b> Warm ☀️ (<span id="avg-soil"></span> ºC)<br>
 					<b>Average Soil Health:</b> Fair (87%)<br>
 					<div class="row">
 						<div class="column half">
 							<h3>Warnings:</h3>
 						</div>
 						<div class="column half" style="text-align:left">
-							<b>Plot 2:</b> Danger: High Ph ❗<br>
-							<b>Plot 5:</b> Warning: Should water soon ⚠️<br>
-							<b>Plot 3:</b> Alert: 3 ºC too warm<br>
+							<br>None 🌻
 						</div>
 					</div>
 				</p>
@@ -124,10 +116,10 @@
 				<div class="row">
 					<div class="column half plot-container odds">
 						
-					</div>
+					<div class="plot" id="plot-1"><h4 id="name-m">PLOT 1: </h4><span id="name">Basil</span><br><h5>Temp: <span id="temp-m-1">15</span> ℃</h5><span id="temp"></span><h5>Water: <span id="water-m">--</span>%</h5><span id="water"></span><h5>pH levels: <span id="ph-m">--</span></h5><span id="ph"></span></div></div>
 					<div class="column half plot-container evens">
 						
-					</div>
+					<div class="plot" id="plot-2"><h4 id="name-m">PLOT 2: </h4><span id="name">Parsley</span><br><h5>Temp: <span id="temp-m-2">15</span> ℃</h5><span id="temp"></span><h5>Water: <span id="water-m">--</span>%</h5><span id="water"></span><h5>pH levels: <span id="ph-m">--</span></h5><span id="ph"></span></div></div>
 				</div>
 			</div>
 
