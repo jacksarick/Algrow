@@ -75,10 +75,6 @@
 				content: "";
 				display: block;
 			}
-
-			.plot:hover {
-				background-color: #3E8341;
-			}
 		</style>
 	</head>
 
@@ -117,7 +113,9 @@
 							<h3>Warnings:</h3>
 						</div>
 						<div class="column half" style="text-align:left">
-							<br>None 🌻
+							<b id="flop-1" style="display:hidden">Plot 2:</b> Danger: High Ph ❗<br>
+							<b id="flop-2" style="display:hidden">Plot 3:</b> Alert: 3 ºC too warm<br>
+							<b id="flop-3" style="display:hidden">Plot 5:</b> Warning: Should water soon ⚠️<br>
 						</div>
 					</div>
 				</p>
@@ -129,34 +127,12 @@
 				<div class="row">
 					<div class="column half plot-container odds">
 						
-					<div class="plot" id="plot-1" role="button" data-toggle="modal" data-target="#modal-1"><h4 id="name-m">Plot</h4><span id="name">Basil</span><br><h5>Temp: <span id="temp-m-1">15</span> ℃</h5><span id="temp"></span><h5>Water: <span id="water-m-1">--</span>%</h5><span id="water"></span><h5>pH levels: <span id="ph-m-1">--</span></h5><span id="ph"></span></div></div>
+					</div>
 					<div class="column half plot-container evens">
-				</div>
-			</div>
-
-			<modals>
-				<div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal-label-1">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="modal-label-1">Plot 1</h4>
-							</div>
-							<div class="modal-body">
-								<b>Owner: </b><span onClick="this.contentEditable='true';">John Doe</span><br>
-								<b>Contents: </b><span id="name" onClick="this.contentEditable='true';">Basil</span><br>
-								<b>Temp: </b><span id="temp-m-1">15</span> ℃<br>
-								<b>Water: </b><span id="water-m-1">89</span>%<br>
-								<b>pH level: </b><span id="ph-m-1">7.2</span>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="if(window.confirm('Are you sure you want to delete this plot?')) {$('#modal-1').hide();$('.modal-backdrop').hide(); $('#plot-1').remove(); $('#modal-1').remove();}">Delete Plot</button>
-								<button type="button" class="btn btn-primary" onclick="$('#modal-1').modal('hide'); $('#plot-1 #name').text($('.modal-body #name').text())">Save changes</button>
-							</div>
-						</div>
+						
 					</div>
 				</div>
-			</modals>
+			</div>
 
 			<footer class="footer">
 				<p>&copy; 2016 GardenSense</p>
